@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coctail Party registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <h1 id="title">Cocktail party invitation</h1>
+    <h2>customize your drinking experience</h2>
+</header>
+<p id="description">Fill the form to customize which drinks you will get at the party</p>
+
+<div class="form-div">
+    <form id="survey-form">
+        
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Enter your name"
+        required/>
+    </div>
+    <br>
+        
+    <div class="form-group">
+      <label id="email-label" for="name">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control"
+        placeholder="Enter your name"
+        required/>
+    </div>
+    <br>
+        
+    <div class="form-group">
+      <label id="number-label" for="name">Age</label>
+      <input
+        type="number"
+        name="age"
+        id="number"
+        min="18"
+        max="99"
+        class="form-control"
+        placeholder="Enter your age"
+        required/>
+    </div>
+    <br>
+        
+    <div class="form-group">
+        <p>What are you drinking usually at the party</p>
+        <select id="dropdown" name="usual-drink" class="form-control" required>
+            <option  disabled selected value>Select one</option>
+            <option value="student">Beers</option>
+            <option value="job">Shots</option>
+            <option value="learner">Cocktails</option>
+            <option value="preferNo">Mixing them all together</option>
+            <option value="other">Other</option>
+          </select>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <p>would you like to have your drinks customized for the party?</p>
+        <label>
+          <input
+            name="customizedDrinks"
+            value="definitely"
+            type="radio"
+            class="input-radio"
+            checked
+          />Yes</label
+        >
+        <label>
+          <input
+            name="customizedDrinks"
+            value="maybe"
+            type="radio"
+            class="input-radio"
+          />No</label
+        >
+  
+        <label
+          ><input
+            name="customizedDrinks"
+            value="not-sure"
+            type="radio"
+            class="input-radio"
+          />Not sure</label
+        >
+      </div>
+      <br>
+
+      <div class="form-group">
+        <p>
+            what is your preferred base drink for your cocktails?
+          <span class="clue">(can chose more then one)</span>
+        </p>
+  
+        <div class="checkbox">
+        <label
+          ><input
+            name="prefer"
+            value="Whisky"
+            type="checkbox"
+            class="input-checkbox"
+          />Whisky</label
+        >
+        <label>
+          <input
+            name="prefer"
+            value="Rum"
+            type="checkbox"
+            class="input-checkbox"
+          />Rum</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="Vodka"
+            type="checkbox"
+            class="input-checkbox"
+          />Vodka</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="Gin"
+            type="checkbox"
+            class="input-checkbox"
+          />Gin</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="tequila"
+            type="checkbox"
+            class="input-checkbox"
+          />tequila</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="brandy"
+            type="checkbox"
+            class="input-checkbox"
+          />brandy</label
+        >
+        <label
+          ><input
+            name="prefer"
+            value="absent"
+            type="checkbox"
+            class="input-checkbox"
+          />Absent</label
+        >
+      </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <p>Any special requests?</p>
+        <textarea
+          id="special"
+          class="input-textarea"
+          name="special"
+          placeholder="Tell us what would you like to drink"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">
+          Submit
+        </button>
+      </div>
+    </form>
+</div>
+
+      </div>
+
+
+<footer>Crated by Dor Plaut for FreeCodeCamp</footer> 
+
+</body>
+</html>
