@@ -422,7 +422,7 @@ footer
 footer{
     animation:var(--animation);
     background: var(--gradient);
-    filter: brightness(90%);
+    /* filter: brightness(90%); */
     background-size: 1000%;
     display: flex;
     flex-direction: column;
