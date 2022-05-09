@@ -12,6 +12,15 @@
     rgba(25, 133, 161, 1) 80%,
     rgba(76, 92, 104, 1) 100%
   );
+  --gradient2: linear-gradient(
+    45deg,
+    rgba(197, 195, 198, 0.88) 0%,
+    rgba(25, 133, 161, 0.88) 20%,
+    rgba(76, 92, 104, 0.88) 40%,
+    rgba(197, 195, 198, 0.88) 60%,
+    rgba(25, 133, 161, 0.88) 80%,
+    rgba(76, 92, 104, 0.88) 100%
+  );
 
   /* primary */
   --primary-1: #38bfe0;
@@ -114,12 +123,16 @@ small,
 header
 ==
 */
+header {
+  background: url(./images/big\ image.jpg);
+  background-size: cover;
+}
 
 .header {
   height: 100vh;
   width: 100%;
   animation: var(--animation);
-  background: var(--gradient);
+  background: var(--gradient2);
   background-size: 1000%;
   display: flex;
   flex-direction: column;
