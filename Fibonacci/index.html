@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="./normlize.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header"><h1>Fibonacci Calculator</h1></header>
+    <p class="proluge">
+      Hello there. Here you can calculate the Fibonacci value of a number of
+      your coice. in addition the page will generate cool frectal background
+      based on your values. enjoy.
+    </p>
+    <section>
+      <div class="claculator">
+        <div class="form-container">
+          <form class="form">
+            <input type="number" placeholder="X" class="num-input" />
+            <br />
+            <button class="btn" type="submit">calculate</button>
+          </form>
+          <p class="alert"></p>
+        </div>
+        <h3>
+          The Fibonacci of <span class="x-var">X</span> is
+          <span class="y-var">Y</span>
+        </h3>
+      </div>
+    </section>
+    <!-- frectal -->
+    <!-- <h3 class="reset-text">Ganarted frectal graphics</h3> -->
+    <div class="frectal">
+      <canvas class="canvas"></canvas>
+    </div>
+    <button class="btn clr-btn">clear background</button>
+    <!-- js -->
+    <script src="./app.js"></script>
+  </body>
+</html>
