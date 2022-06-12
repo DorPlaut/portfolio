@@ -89,13 +89,55 @@ body {
   background: var(--primary5);
 }
 
+/* load screen */
+.load-container {
+  position: fixed;
+  top: calc(50vh - 200px);
+  background: var(--primary5);
+  width: calc(100vw - 10rem);
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+}
+
+#load-img {
+  color: var(--primary9);
+  font-size: 250px;
+  transition: var(--transition);
+  animation: loading 3s ease-in-out infinite;
+  visibility: hidden;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(120deg);
+  }
+  66% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide-loadscreen {
+  visibility: visible;
+}
+
 /* header */
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 150px;
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   width: 100vw;
   background: var(--primary3);
 }
@@ -116,6 +158,8 @@ body {
 .claculator h3 {
   padding-bottom: 2rem;
   margin-top: 0rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* form */
@@ -155,10 +199,12 @@ input[type='number']::-webkit-outer-spin-button {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  height: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  height: 1.5rem;
   width: 300px;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
   border-radius: 0.25rem;
   letter-spacing: var(--spacing);
   text-transform: capitalize;
@@ -185,4 +231,25 @@ input[type='number']::-webkit-outer-spin-button {
 
 .reset-text {
   color: var(--primary3);
+}
+
+/* footer */
+footer {
+  /* max-width: var(--max-width); */
+  width: 100vw;
+  background: var(--primary3);
+  height: 50px;
+  position: absolute;
+  margin-top: calc(100vh - 50px);
+}
+footer p {
+  color: var(--primary8);
+}
+footer a {
+  color: var(--primary8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+footer a:hover {
+  color: var(--primary6);
 }

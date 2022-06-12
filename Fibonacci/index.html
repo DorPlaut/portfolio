@@ -8,14 +8,28 @@
     <!-- styles -->
     <link rel="stylesheet" href="./normlize.css" />
     <link rel="stylesheet" href="./style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- load screen -->
+    <div class="load-container">
+      <i class="fa-brands fa-connectdevelop" id="load-img"></i>
+    </div>
+    <!-- header -->
     <header class="header"><h1>Fibonacci Calculator</h1></header>
+    <!-- introdaction -->
     <p class="proluge">
       Hello there. Here you can calculate the Fibonacci value of a number of
       your coice. in addition the page will generate cool frectal background
       based on your values. enjoy.
     </p>
+    <!-- content -->
     <section>
       <div class="claculator">
         <div class="form-container">
@@ -33,12 +47,26 @@
       </div>
     </section>
     <!-- frectal -->
-    <!-- <h3 class="reset-text">Ganarted frectal graphics</h3> -->
     <div class="frectal">
       <canvas class="canvas"></canvas>
     </div>
     <button class="btn clr-btn">clear background</button>
+    <!-- footer -->
+    <footer>
+      <p>
+        Build by
+        <a href="https://dorplaut.github.io/portfolio/" target="_blank"
+          >Dor Plaut</a
+        >
+        2022 &copy;
+      </p>
+    </footer>
     <!-- js -->
     <script src="./app.js"></script>
+    <!-- fontaowsome -->
+    <script
+      src="https://kit.fontawesome.com/3f09da8819.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

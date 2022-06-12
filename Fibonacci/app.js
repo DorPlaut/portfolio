@@ -1,3 +1,4 @@
+// #### Global variables ####
 const xVar = document.querySelector('.x-var');
 const yVar = document.querySelector('.y-var');
 const btn = document.querySelector('.btn');
@@ -6,17 +7,20 @@ const form = document.querySelector('.form');
 const frectal = document.querySelector('.frectal');
 const numInput = document.querySelector('.num-input');
 const alert = document.querySelector(`.alert`);
-let input;
 const clrBtn = document.querySelector('.clr-btn');
+const loadContainer = document.querySelector('.load-container');
+const loadImg = document.querySelector('#load-img');
 
+let input;
 let firstNum = 0;
 let secondNum = 1;
 let sequence;
 let arr = [];
+let last;
+let secondToLast;
 
-// functions
-
-// calc fibonacci
+//#### functions ####
+// ## calc fibonacci (using for loop) ##
 function calcFibonacci(X) {
   for (let i = 0; i <= X; i++) {
     sequence = firstNum + secondNum;
@@ -27,10 +31,35 @@ function calcFibonacci(X) {
   xVar.textContent = X;
   arr.unshift(1);
   let Y = arr[arr.length - 3];
+  Y = Y.toLocaleString('fullwide', { useGrouping: false });
   yVar.textContent = Y;
 }
 
-// clear X,Y and form input
+// ## calc fibonacci (using recursion)
+function calcFibonacciRec(X) {
+  xVar.textContent = X;
+  X++;
+  arr.push(firstNum);
+  arr.push(secondNum);
+  pushRec(X);
+
+  function pushRec(X) {
+    let value = arr.length;
+    last = arr.length - 1;
+    secondToLast = arr.length - 2;
+    let nextNum = arr[last] + arr[secondToLast];
+    arr.push(nextNum);
+    if (arr.length < X) {
+      pushRec(X);
+    } else {
+      yVar.textContent = arr[value].toLocaleString('fullwide', {
+        useGrouping: false,
+      });
+    }
+  }
+}
+
+// ## clear X,Y and form input ##
 function setBacktoDefault() {
   firstNum = 0;
   secondNum = 1;
@@ -40,11 +69,8 @@ function setBacktoDefault() {
   xVar.textContent = '';
   yVar.textContent = '';
 }
-// draw frectal
-
-// events
-// canvas
-window.addEventListener('load', function () {
+// ## crate canvas ##
+function crateCanvas() {
   const canvas = document.querySelector('.canvas');
   const ctx = canvas.getContext('2d');
   function draw(x, y, z) {
@@ -58,8 +84,10 @@ window.addEventListener('load', function () {
     draw(500, 1000, 8000);
   });
   clrBtn.addEventListener('click', function () {
-    console.log('hello');
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    xVar.textContent = 'X';
+    yVar.textContent = 'Y';
+    displayAlert('background has cleared', 'success');
   });
 
   function drawFrectal(x, y, z) {
@@ -70,24 +98,43 @@ window.addEventListener('load', function () {
       drawFrectal(x, y - z * input, z * 0.5);
     }
   }
-});
-
-window.addEventListener('resize', fitToContainer(canvas));
-
+}
+// ## size canvas ##
 function fitToContainer(canvas) {
   canvas.style.width = '100%';
   canvas.style.height = '100%';
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 }
+// ## submit form ##
+function submitForm(e) {}
+//## display alert ##
+function displayAlert(text, action) {
+  alert.textContent = text;
+  alert.classList.add(`alert-${action}`);
+  // remove alert
+  setTimeout(function () {
+    alert.textContent = '';
+    alert.classList.remove(`alert-${action}`);
+  }, 1000);
+}
 
-// submit form
+// #### events ####
+// ## loadscreen ##
+document.addEventListener('load', function () {
+  loadContainer.classList.add('hide-loadscreen');
+  loadImg.classList.add('hide-loadscreen');
+});
+// ## canvas ##
+window.addEventListener('load', crateCanvas());
+window.addEventListener('resize', fitToContainer(canvas));
+// ## submit form ##
 form.addEventListener('submit', function (e) {
   input = parseInt(numInput.value);
   setBacktoDefault();
   e.preventDefault();
   if (isNaN(input) == false && input > 1) {
-    calcFibonacci(input);
+    calcFibonacciRec(input);
     displayAlert('calculated successfully', 'success');
   }
   if (isNaN(input) == true) {
@@ -100,20 +147,12 @@ form.addEventListener('submit', function (e) {
     yVar.textContent = 'Y';
     displayAlert('Please enter a namber bigger then 0', 'danger');
   }
-  console.log(input);
+  if (input == 1) {
+    xVar.textContent = '1';
+    yVar.textContent = '1';
+    displayAlert('calculated successfully', 'success');
+  }
 });
 
-// display alert
-function displayAlert(text, action) {
-  alert.textContent = text;
-  alert.classList.add(`alert-${action}`);
-  // remove alert
-  setTimeout(function () {
-    alert.textContent = '';
-    alert.classList.remove(`alert-${action}`);
-  }, 1000);
-}
-
-//  numInput.value === ''
-
 // calcFibonacci(1);
+// calcFibonacciRec(100);
