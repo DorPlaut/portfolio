@@ -17,7 +17,7 @@
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
   /* others */
-  --transition: 0.3s ease-in-out all;
+  --transition: 0.4s ease-in-out all;
   --border-radius: 0.25rem;
   --max-width: 800px;
 }
@@ -96,12 +96,12 @@ body {
   background: var(--primary5);
   width: calc(100vw - 10rem);
   max-width: 400px;
-  height: 400px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  visibility: hidden;
+  border-radius: var(--border-radius);
 }
 
 #load-img {
@@ -109,7 +109,6 @@ body {
   font-size: 250px;
   transition: var(--transition);
   animation: loading 3s ease-in-out infinite;
-  visibility: hidden;
 }
 
 @keyframes loading {
@@ -125,10 +124,6 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.hide-loadscreen {
-  visibility: visible;
 }
 
 /* header */
@@ -150,12 +145,15 @@ body {
 /* calc */
 
 .claculator {
+  border-radius: var(--border-radius);
+
   max-width: var(--max-width);
   width: calc(100vw - 2.5rem);
   background: var(--primary3);
 }
 /* result */
 .claculator h3 {
+  font-size: 1.6rem;
   padding-bottom: 2rem;
   margin-top: 0rem;
   overflow: hidden;
@@ -239,7 +237,7 @@ footer {
   width: 100vw;
   background: var(--primary3);
   height: 50px;
-  position: absolute;
+  position: fixed;
   margin-top: calc(100vh - 50px);
 }
 footer p {

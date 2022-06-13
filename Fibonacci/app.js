@@ -80,9 +80,7 @@ function crateCanvas() {
     drawFrectal(x, y, z);
     ctx.stroke();
   }
-  btn.addEventListener('click', function () {
-    draw(500, 1000, 8000);
-  });
+  draw(500, 1000, 8000);
   clrBtn.addEventListener('click', function () {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     xVar.textContent = 'X';
@@ -116,26 +114,27 @@ function displayAlert(text, action) {
   setTimeout(function () {
     alert.textContent = '';
     alert.classList.remove(`alert-${action}`);
-  }, 1000);
+  }, 2000);
 }
 
 // #### events ####
 // ## loadscreen ##
-document.addEventListener('load', function () {
-  loadContainer.classList.add('hide-loadscreen');
-  loadImg.classList.add('hide-loadscreen');
+window.addEventListener('load', function () {
+  loadContainer.style.visibility = 'hidden';
+  loadImg.style.visibility = 'hidden';
 });
 // ## canvas ##
-window.addEventListener('load', crateCanvas());
+// window.addEventListener('load', crateCanvas());
 window.addEventListener('resize', fitToContainer(canvas));
 // ## submit form ##
 form.addEventListener('submit', function (e) {
   input = parseInt(numInput.value);
   setBacktoDefault();
   e.preventDefault();
-  if (isNaN(input) == false && input > 1) {
+  if (isNaN(input) == false && input > 0 && input <= 50) {
     calcFibonacciRec(input);
     displayAlert('calculated successfully', 'success');
+    crateCanvas();
   }
   if (isNaN(input) == true) {
     xVar.textContent = 'X';
@@ -147,12 +146,14 @@ form.addEventListener('submit', function (e) {
     yVar.textContent = 'Y';
     displayAlert('Please enter a namber bigger then 0', 'danger');
   }
-  if (input == 1) {
-    xVar.textContent = '1';
-    yVar.textContent = '1';
-    displayAlert('calculated successfully', 'success');
+  if (input > 50) {
+    xVar.textContent = 'X';
+    yVar.textContent = 'Y';
+    displayAlert('Please enter a namber smaller then 50', 'danger');
   }
 });
 
-// calcFibonacci(1);
-// calcFibonacciRec(100);
+// ##-- uncomment to test for loop function --##  //
+// calcFibonacci(10);
+// ##-- uncomment to test for recursion function --##  //
+// calcFibonacciRec(10);
