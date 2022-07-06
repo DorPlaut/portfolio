@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Simple Projects</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- normal css -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- font aowsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css
+
+
+
+"
+    />
+    <!-- google fonts -->
+    <!-- end of style -->
+  </head>
+  <body class="bg-light d-flex flex-column min-vh-100">
+    <!-- header -->
+    <header
+      class="container-fluid text-center shadow-1g p-3 mb-3 bg-dark text-light"
+    >
+      <div class="row">
+        <div class="col">
+          <h1>
+            <i class="fa-solid fa-brain"></i> JavaScript Simple Projects
+            <i class="fa-solid fa-brain"></i>
+          </h1>
+          <div class="row">
+            <h5>A variety of projects using javascript.</h5>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- introduction -->
+    <div class="container d-flex justify-content-center text-dark text-center">
+      <p>
+        Hello there. <br />
+        Here you can try a variety of simple applications build with
+        JavaScript. Enjoy!
+      </p>
+    </div>
+    <!-- nav -->
+
+<div class="container btn-group" role="group" aria-label="Basic example">
+<button
+              type="button"
+              data-bs-target="#mainContent"
+              data-bs-slide-to="0"
+              aria-current="true"
+              aria-label="Slide 1"
+              class="btn btn-outline-dark navBtn"
+            >
+              <i class="fa-solid fa-down-left-and-up-right-to-center fs-1"></i><br>
+              Palindrome
+</button>
+
+<button
+              type="button"
+              data-bs-target="#mainContent"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              class="btn btn-outline-dark navBtn"
+            >
+              <i class="fw-bold fs-1 roman">IV</i><br>
+              Roman
+</button>
+
+ <button
+              type="button"
+              data-bs-target="#mainContent"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              class="btn btn-outline-dark navBtn"
+            >
+              <i class="fa-solid fa-rotate fs-1"></i><br>
+              ROT13
+</button>
+
+<button
+              type="button"
+              data-bs-target="#mainContent"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+              class="btn btn-outline-dark navBtn"
+            >
+              <i class="fa-solid fa-circle-plus fs-1"></i><br>
+              Fibonacci
+</button>
+</div>
+    <br />
+    <!-- project -->
+    <div class="container d-flex justify-content-center" id="projects">
+      <div class="row">
+        <div
+          id="mainContent"
+          class="carousel slide  shadow p-3 mb-4 bg-body rounded">
+          <div class="carousel-inner">
+            <div class="carousel-item  text-center active">
+              <div id="Palindrome-Checker">
+                <h1>Palindrome Checker</h1>
+                <p>
+                  A palindrome is a word or sentence that's spelled the same way
+                  both forward and backward, ignoring punctuation, case, and
+                  spacing. For exemple:
+                  
+                  <ul class="list-group list-group-horizontal d-flex justify-content-center">
+                  <li class="list-group-item">redivider</li> 
+                  <li class="list-group-item">level</li> 
+                  <li class="list-group-item">kayak</li> 
+                  <li class="list-group-item">Too hot to hoot</li> 
+                  <li class="list-group-item">16461</li> 
+                  <li class="list-group-item">1881</li> 
+                  </ul>
+                  <br>
+                  This app will check if the given word or a number is a
+                  palindrome.
+                </p>
+                <form action="" id="Palindrome-form">
+                  <input
+                    type="text"
+                    placeholder="enter word/number"
+                    class="text-center mb-3"
+                    id="Palindrome-input"
+                  />
+                  <br />
+                  <button
+                    type="submit"
+                    class="btn btn-outline-dark mb-3"
+                    id="Palindrome-btn"
+                  >
+                    Is it a palindrome?
+                  </button>
+                </form>
+                <h4 id="Palindrome-selution"></h4>
+              </div>
+            </div>
+            <!-- project -->
+
+            <div class="carousel-item text-center">
+              <div id="Roman-Numeral-Converter">
+                <h1>Roman Numeral Converter</h1>
+                <p>
+                  Roman numerals are the symbols used in a system of numerical
+                  notation based on the ancient Roman system. The symbols are:
+                  <ul class="list-group list-group-horizontal d-flex justify-content-center">
+                  <li class="list-group-item">I</li> 
+                  <li class="list-group-item">V</li> 
+                  <li class="list-group-item">X</li> 
+                  <li class="list-group-item">L</li> 
+                  <li class="list-group-item">C</li> 
+                  <li class="list-group-item">D</li> 
+                  <li class="list-group-item">M</li> 
+                  </ul>
+                  standing respectively for
+                      <ul class="list-group list-group-horizontal d-flex justify-content-center">
+                  <li class="list-group-item">1</li> 
+                  <li class="list-group-item">5</li> 
+                  <li class="list-group-item">10</li> 
+                  <li class="list-group-item">50</li> 
+                  <li class="list-group-item">100</li> 
+                  <li class="list-group-item">500</li> 
+                  <li class="list-group-item">1,000</li> 
+                  </ul>
+                  Here you can insert a number and get the roman numerals for
+                  it. enjoy.
+                </p>
+                <form action="" id="Roman-form">
+                  <input
+                    type="number"
+                    placeholder="enter number"
+                    class="text-center mb-3"
+                    id="Roman-input"
+                  />
+                  <br>
+                  <button type="submit" class="btn btn-outline-dark mb-3" id="Roman-btn">
+                    Convert now!
+                  </button>
+                </form>
+                <h3 id="Roman-selution"></h3>
+              </div>
+            </div>
+            <!-- project -->
+            <div class="carousel-item text-center">
+              <div id="Caesars-Cipher">
+                <h1>ROT13 (Caesars Cipher)</h1>
+                <p>
+                  ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is
+                  a simple letter substitution cipher that replaces a letter
+                  with the 13th letter after it in the alphabet. ROT13 is a
+                  special case of the Caesar cipher which was developed in
+                  ancient Rome. Because there are 26 letters (2×13) in the basic
+                  Latin alphabet, ROT13 is its own inverse; that is, to undo
+                  ROT13, the same algorithm is applied, so the same action can
+                  be used for encoding and decoding. The algorithm provides
+                  virtually no cryptographic security, and is often cited as a
+                  canonical example of weak encryption.
+                </p>
+                <form action="" id="Caesars-form">
+                  <input
+                    type="text"
+                    placeholder="enter word"
+                    class="text-center mb-3"
+                    id="Caesars-input"
+                  />
+                  <br>
+                  <button
+                    type="submit"
+                    class="btn btn-outline-dark mb-3"
+                    id="Caesars-btn"
+                  >
+                    Encode now!
+                  </button>
+                </form>
+                <h3 id="Caesars-selution"></h3>
+              </div>
+            </div>
+            <!-- project -->
+            <div class="carousel-item text-center">
+              <div id="fibonacci-calculator">
+                <h1>Fibonacci Calculator</h1>
+                <p>In mathematics, the Fibonacci numbers, commonly denoted <i>Fn</i>, form a sequence, the Fibonacci sequence, in which each number is the sum of the two preceding ones. The sequence commonly starts from 0 and 1, although some authors omit the initial terms and start the sequence from 1 and 1 or from 1 and 2. Starting from 0 and 1, the next few values in the sequence are:
+                <ul class="list-group list-group-horizontal d-flex justify-content-center">
+                  <li class="list-group-item">1</li> 
+                  <li class="list-group-item">1</li> 
+                  <li class="list-group-item">2</li> 
+                  <li class="list-group-item">3</li> 
+                  <li class="list-group-item">5</li> 
+                  <li class="list-group-item">8</li> 
+                  <li class="list-group-item">13</li> 
+                  </ul>
+                 Enter a number to calculate the Fibonacci value of a number
+                </p>
+                <form action="" id="fibonacci-form">
+                  <input
+                    type="number"
+                    placeholder="enter number"
+                    class="text-center mb-3"
+                    id="fibonacci-input"
+                  />
+                  <br>
+                  <button type="submit" class="btn btn-outline-dark mb-3" id="fibonacci-btn">
+                    calculate now!
+                  </button>
+                </form>
+                <h3 id="fibonacci-selution"></h3>
+              </div>
+            </div>
+            <!-- project -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="container-fluid bg-dark mt-auto text-center text-light">
+      <p>Build by <a href="https://dorplaut.github.io/portfolio/" target="_blank" class="link-light">Dor Plaut</a> 2022 ©</p>
+    </div>
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- normal javascript -->
+    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
+  </body>
+</html>
